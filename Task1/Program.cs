@@ -2,8 +2,9 @@
 string password = "12345";
 
 int count = 0;
+int tryToGuess = 3;
 
-while(count < 3)
+while(count < tryToGuess)
 {
     Console.Write("Введите пароль: ");
     if(password == Console.ReadLine())

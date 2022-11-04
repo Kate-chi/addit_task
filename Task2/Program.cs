@@ -1,12 +1,10 @@
 ﻿string ex = "exit";
-int x = 2;
 
-while(x > 1)
+while(true)
 {
     Console.WriteLine("++++для выхода напишите exit++++");
     if(ex == Console.ReadLine())
     {
         break;
     }
-    x++;
 }
