@@ -10,8 +10,6 @@ string? userName;
 
 while(true)
 {
-    Console.WriteLine("старт");
-    
     string? input = Console.ReadLine();
 
     if(help == input)
@@ -36,7 +34,7 @@ while(true)
     {
         Console.Write("Введите тайный пароль: ");
         int password = Convert.ToInt32(Console.ReadLine());
-        
+
         if(password == secterPassword)
         {
             Console.Write("Вы настоящий сыщик! Поздравляем :)");
