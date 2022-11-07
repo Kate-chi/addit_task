@@ -1,57 +1,78 @@
-﻿string ex = "exit";
-string setName = "setName";
-string help = "help";
-string setPassword = "setPassword";
-string sayHello = "sayHello";
-
-int secterPassword = 1325476;
-string? userPassword;
-string? userName;
+﻿int secterPassword = 1325476;
+string? userPassword = "";
+string? userName = "";
 
 while(true)
 {
     string? input = Console.ReadLine();
 
-    if(help == input)
+    switch(input)
     {
-        Console.Write("Для установки 13имени пользователя введите 'setName' \n" +
-                      "Для25 установки пароля введите 'setPassword' \n" +
-                      "Для вывода спис47ка команд введите 'help' \n" +
-                      "Для выхода введит6е 'exit'" +
-                      "Испытайте себя 'sayHello'");
-    }
-    else if(setName == input)
-    {
-        Console.Write("Введите имя пользователя: ");
-        userName = Console.ReadLine();
-    }
-    else if(setPassword == input)
-    {
-        Console.Write("Введите пароль: ");
-        userPassword = Console.ReadLine();
-    }
-    else if(sayHello == input)
-    {
-        Console.Write("Введите тайный пароль: ");
-        int password = Convert.ToInt32(Console.ReadLine());
+        case "help": 
 
-        if(password == secterPassword)
-        {
-            Console.Write("Вы настоящий сыщик! Поздравляем :)");
-        }
-        else
-        {
-            Console.Write("Жаль, что не ко всему в нашем мире есть инструкция :( ");
-        }
+            Console.WriteLine("Для установки 13имени пользователя введите 'setName' \n" +
+                              "Для25 установки пароля введите 'setPassword' \n" +
+                              "Для вывода спис47ка команд введите 'help' \n" +
+                              "Для выхода введит6е 'exit' \n" +
+                              "Испытайте себя 'sayHello'");
+            break;              
+    
+        case "setName":
+
+            Console.WriteLine("Введите имя пользователя: ");
+            userName = Console.ReadLine();
+
+            break;
+
+        case "setPassword":
+    
+            Console.WriteLine("Установите пароль: ");
+            userPassword = Console.ReadLine();
+
+            break;
+    
+        case "sayHello":
+
+            Console.WriteLine("Введите тайный пароль: ");
+            int password = Convert.ToInt32(Console.ReadLine());
+
+            if(password == secterPassword)
+            {
+                Console.WriteLine("Вы настоящий сыщик! Поздравляем :)");
+            }    
+            else
+            {
+                Console.WriteLine("Жаль, что не ко всему в нашем мире есть инструкция :( ");
+            }
+
+            break;
+
+        case "writeName":
+
+            Console.WriteLine("Введите ваш пароль: ");
+            string? pass = Console.ReadLine();
+
+            if(pass == userPassword)
+            {
+                Console.WriteLine($"Привет, {userName}");
+            }
+            else
+            {
+                Console.WriteLine("Вы ввели неверный пароль");
+            }
+            break;
+
+        default:
+            {
+                Console.WriteLine("Такой команды не существует");
+            }
+            break;
     }
-    else if(ex == input)
+
+    if(input == "exit")
     {
         break;
     }
-    else
-    {
-        Console.Write("Такой команды не существует");
-    }
-}
+}    
 
 
